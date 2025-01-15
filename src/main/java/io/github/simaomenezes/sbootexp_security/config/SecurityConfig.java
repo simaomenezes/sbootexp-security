@@ -1,5 +1,6 @@
 package io.github.simaomenezes.sbootexp_security.config;
 
+import io.github.simaomenezes.sbootexp_security.PasswordMasterAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -18,7 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, PasswordMasterAuthenticationProvider passwordMasterAuthenticationProvider) throws Exception {
         return http
                 .authorizeHttpRequests(customizer ->{
                     customizer.requestMatchers("/public").permitAll();
@@ -26,6 +27,7 @@ public class SecurityConfig {
                 })
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults())
+                .authenticationProvider(passwordMasterAuthenticationProvider)
                 .build();
     }
 
