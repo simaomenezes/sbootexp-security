@@ -28,6 +28,6 @@ public class PasswordMasterAuthenticationProvider implements AuthenticationProvi
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return false;
+        return true;
     }
 }
