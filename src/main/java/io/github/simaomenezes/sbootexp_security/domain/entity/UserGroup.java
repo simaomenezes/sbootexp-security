@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
+@Table(name = "tb_user_group")
 @Data
 public class UserGroup {
 
@@ -12,10 +13,10 @@ public class UserGroup {
     private String id;
 
     @ManyToOne
-    @JoinColumn(name = "idUser")
+    @JoinColumn(name = "id_user")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "idGroup")
+    @JoinColumn(name = "id_group")
     private Group group;
 }
