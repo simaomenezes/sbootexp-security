@@ -29,7 +29,7 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(customizer ->{
                     customizer.requestMatchers("/public").permitAll();
-                    customizer.requestMatchers("/admin").hasRole("ADMIN");
+                    //customizer.requestMatchers("/admin").hasRole("ADMIN");
                     customizer.anyRequest().authenticated();
                 })
                 .httpBasic(Customizer.withDefaults())
