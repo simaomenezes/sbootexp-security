@@ -1,4 +1,4 @@
-package io.github.simaomenezes.sbootexp_security;
+package io.github.simaomenezes.sbootexp_security.config;
 
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,4 +1,4 @@
-package io.github.simaomenezes.sbootexp_security;
+package io.github.simaomenezes.sbootexp_security.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

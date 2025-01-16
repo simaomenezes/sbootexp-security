@@ -1,7 +1,7 @@
 package io.github.simaomenezes.sbootexp_security.config;
 
-import io.github.simaomenezes.sbootexp_security.CustomFilter;
-import io.github.simaomenezes.sbootexp_security.PasswordMasterAuthenticationProvider;
+import io.github.simaomenezes.sbootexp_security.config.CustomFilter;
+import io.github.simaomenezes.sbootexp_security.config.PasswordMasterAuthenticationProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;

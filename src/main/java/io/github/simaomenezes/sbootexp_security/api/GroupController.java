@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GroupController {
 
-    private GroupRepository repository;
+    private final GroupRepository repository;
 
     @PostMapping
     @Transactional
