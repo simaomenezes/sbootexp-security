@@ -1,11 +1,12 @@
 package io.github.simaomenezes.sbootexp_security.api;
 
 import io.github.simaomenezes.sbootexp_security.domain.entity.Group;
-import io.github.simaomenezes.sbootexp_security.domain.repository.GroupRepository;
+
+import io.github.simaomenezes.sbootexp_security.service.GroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,20 +16,19 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GroupController {
 
-    private final GroupRepository repository;
+    private final GroupService service;
 
     @PostMapping
-    @Transactional
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Group> add(@RequestBody Group group){
-        repository.save(group);
+        service.add(group);
         return ResponseEntity.ok(group);
     }
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Group>> getAll(){
-        List<Group> groupsList = repository.findAll();
+        List<Group> groupsList = service.findAll();
         return ResponseEntity.ok(groupsList);
     }
 }
