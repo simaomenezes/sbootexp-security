@@ -11,6 +11,6 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @Column
+    @Column(name = "name")
     private String name;
 }

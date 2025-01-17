@@ -4,6 +4,7 @@ import io.github.simaomenezes.sbootexp_security.domain.entity.Group;
 
 import io.github.simaomenezes.sbootexp_security.service.GroupService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 
@@ -16,7 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GroupController {
 
-    private final GroupService service;
+    @Autowired
+    private GroupService service;
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
